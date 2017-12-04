@@ -24,13 +24,20 @@ public class HomePage {
 	@FindBy (id="routeSelection_DepartureStation-input")
 	private WebElement FromTxtBx;
 	
+
+	
 	//click Logout button
 	public boolean clickFromTxtBx(){
 		FromTxtBx.click();
 		util.waitForElement();
 		return false;
 	}
-
+	
+	
+	public boolean selectValueFrom() {
+		
+		return false;
+	}
 /*	// automatic properties
 	public WebDriver getDriver() {
 		return driver;
