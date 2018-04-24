@@ -3,12 +3,13 @@
  */
 package com.transavia.assignment;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.lang.reflect.Method;
-
+import com.transavia.assignment.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 public class HomePageTest extends BaseTest{
 	
@@ -27,7 +28,7 @@ public class HomePageTest extends BaseTest{
 	
 	@Test(groups={"Search flights"},description="isTransaviaHomePageSuccessfullyLoaded")
 	public void verifyHomePageloadActivity() {
-		Assert.assertTrue(homePageObj.isTransaviaLogoVisible());
+		AssertJUnit.assertTrue(homePageObj.isTransaviaLogoVisible());
 		util.waitForElement(5000);
 	}
 	
@@ -36,7 +37,7 @@ public class HomePageTest extends BaseTest{
 	public void verifyFromToFUnctionalities() {
 		homePageObj.clickFromTxtBx();
 		homePageObj.enterFromAndToDestination();
-		Assert.assertTrue(true);
+		AssertJUnit.assertTrue(true);
 		
 	}
 	
@@ -44,7 +45,7 @@ public class HomePageTest extends BaseTest{
 	public void verifyDates() {
 		homePageObj.clickReturnCheckbox();
 		homePageObj.enterDate();
-		Assert.assertTrue(true, "Dates are entered");
+		AssertJUnit.assertTrue("Dates are entered", true);
 		util.waitForElement(5000);
 	}
 	
@@ -54,7 +55,7 @@ public class HomePageTest extends BaseTest{
 		homePageObj.isPassengerPopupDisplayed();
 		homePageObj.clickAddAdultPassengers();
 		homePageObj.clickSaveNoOfPassengers();
-		Assert.assertTrue(true);
+		AssertJUnit.assertTrue(true);
 		util.waitForElement(5000);
 	}
 	
